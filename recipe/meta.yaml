@@ -1,4 +1,4 @@
-{% set version = "1.1.1" %}
+{% set version = '1.2' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,9 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ggmcmc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ggmcmc/ggmcmc_{{ version }}.tar.gz
-  sha256: 2c0fa95de4da69b489313e54b807ad31ea7e7cdb43d13f65596d73c39dba3f89
+  sha256: 2900bea9c6c180f378bf5a6c47616341acd1eae4549b17ff8107957d3dfb66bc
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
   number: 0
   noarch: generic
@@ -23,6 +22,7 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-ggally >=1.1.0
@@ -53,9 +53,25 @@ about:
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+    - conda-forge/r
+
+# Package: ggmcmc
+# Title: Tools for Analyzing MCMC Simulations from Bayesian Inference
+# Description: Tools for assessing and diagnosing convergence of Markov Chain Monte Carlo simulations, as well as for graphically display results from full MCMC analysis. The package also facilitates the graphical interpretation of models by providing flexible functions to plot the results against observed variables.
+# Version: 1.2
+# Maintainer: Xavier Fernandez i Marin <xavier.fim@gmail.com>
+# Author: Xavier Fernandez i Marin <xavier.fim@gmail.com>
+# Depends: dplyr (>= 0.5.0), tidyr (>= 0.5.1), ggplot2
+# Imports: GGally (>= 1.1.0)
+# Suggests: coda, rstan (>= 2.10.1), knitr, rmarkdown, ggthemes, gridExtra, Cairo, extrafont
+# License: GPL-2
+# URL: http://xavier-fim.net/packages/ggmcmc, https://github.com/xfim/ggmcmc
+# BugReports: https://github.com/xfim/ggmcmc/issues
+# Encoding: UTF-8
+# Collate: 'ggmcmc.R' 'ggs.R' 'ggs_autocorrelation.R' 'ggs_compare_partial.R' 'ggs_crosscorrelation.R' 'ggs_density.R' 'ggs_histogram.R' 'ggs_running.R' 'ggs_traceplot.R' 'ggs_pairs.R' 'data.R' 'help.R' 'functions.R' 'ggs_Rhat.R' 'ggs_geweke.R' 'ggs_caterpillar.R' 'ggs_separation.R' 'globals.R' 'ggs_ppmean.R' 'ggs_ppsd.R' 'ggs_rocplot.R'
+# RoxygenNote: 6.1.1
+# VignetteBuilder: knitr
+# NeedsCompilation: no
+# Packaged: 2019-02-15 21:22:07 UTC; xavier
+# Repository: CRAN
+# Date/Publication: 2019-02-15 23:10:04 UTC
