@@ -1,4 +1,4 @@
-{% set version = "1.3" %}
+{% set version = "1.4.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ggmcmc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ggmcmc/ggmcmc_{{ version }}.tar.gz
-  sha256: 2ba83a3ac293dabcae98438c2e2558f9e5b90451785b8f54b5840010979c6a5c
+  sha256: 6edf69ecfb1e81c90208eac3a8e19565779d1c59f78df0e592149264caedba15
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -44,12 +44,10 @@ test:
 about:
   home: http://xavier-fim.net/packages/ggmcmc, https://github.com/xfim/ggmcmc
   license: GPL-2
-  summary: Tools for assessing and diagnosing convergence of Markov Chain Monte Carlo simulations,
-    as well as for graphically display results from full MCMC analysis. The package
-    also facilitates the graphical interpretation of models by providing flexible functions
-    to plot the results against observed variables.
+  summary: Tools for assessing and diagnosing convergence of Markov Chain Monte Carlo simulations, as well as for graphically display results from full MCMC analysis.
+    The package also facilitates the graphical interpretation of models by providing flexible functions to plot the results against observed variables.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
