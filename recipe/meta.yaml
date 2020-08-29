@@ -26,15 +26,15 @@ requirements:
   host:
     - r-base
     - r-ggally >=1.1.0
-    - r-dplyr >=0.5.0
+    - r-dplyr >=1.0.0
     - r-ggplot2
-    - r-tidyr >=0.5.1
+    - r-tidyr >=1.1.0
   run:
     - r-base
     - r-ggally >=1.1.0
-    - r-dplyr >=0.5.0
+    - r-dplyr >=1.0.0
     - r-ggplot2
-    - r-tidyr >=0.5.1
+    - r-tidyr >=1.1.0
 
 test:
   commands:
@@ -43,10 +43,11 @@ test:
 
 about:
   home: http://xavier-fim.net/packages/ggmcmc, https://github.com/xfim/ggmcmc
-  license: GPL-2
+  license: GPL-2.0-only
   summary: Tools for assessing and diagnosing convergence of Markov Chain Monte Carlo simulations, as well as for graphically display results from full MCMC analysis. The package also facilitates the graphical interpretation of models by providing flexible functions to plot the results against observed variables.
   license_family: GPL2
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
