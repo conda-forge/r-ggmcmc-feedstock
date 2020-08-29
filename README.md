@@ -3,7 +3,7 @@ About r-ggmcmc
 
 Home: http://xavier-fim.net/packages/ggmcmc, https://github.com/xfim/ggmcmc
 
-Package license: GPL-2
+Package license: GPL-2.0-only
 
 Feedstock license: BSD-3-Clause
 
