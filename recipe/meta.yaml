@@ -1,4 +1,4 @@
-{% set version = "1.5.0" %}
+{% set version = "1.5.1.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ggmcmc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ggmcmc/ggmcmc_{{ version }}.tar.gz
-  sha256: c56a2e45972d444d6fd08f6651d95eac8f974ab402f787dfd66515b5ff3a907b
+  sha256: 41d883fe5341c4aa3f5653f10178cc12b164bbae702a827433105518b150def8
 
 build:
   merge_build_host: true  # [win]
